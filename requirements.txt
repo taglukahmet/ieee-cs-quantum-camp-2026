@@ -1,0 +1,27 @@
+# --- QURUNTU SYSTEM ARCHITECTURE ---
+
+# 1. Core Mathematics & Data Handlers
+numpy>=1.26.0
+scipy>=1.11.0
+pandas>=2.1.0
+
+# 2. Quantum Annealing (Node 2: Ocean SDK)
+dwave-ocean-sdk>=6.8.0
+
+# 3. Gate-Based Architecture (Node 3: Qiskit)
+qiskit>=1.0.0
+qiskit-aer>=0.14.0
+qiskit-optimization>=0.6.0
+qiskit-algorithms>=0.3.0
+rustworkx>=0.14.0
+
+# 4. Classical Optimization Baseline (Node 4)
+ortools>=9.8.0
+
+# 5. Systems Integration & Graph Logic (Node 5)
+networkx>=3.2.0
+matplotlib>=3.8.0
+
+# 6. CLI Tracker Dependencies
+PyGithub>=2.2.0
+rich>=13.7.0

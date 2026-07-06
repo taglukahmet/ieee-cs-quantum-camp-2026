@@ -25,3 +25,9 @@ matplotlib>=3.8.0
 # 6. CLI Tracker Dependencies
 PyGithub>=2.2.0
 rich>=13.7.0
+
+# 7. .env integration
+python-dotenv>=1.0.0
+
+# 8. preventing commit mistakes
+pre-commit>=3.6.0

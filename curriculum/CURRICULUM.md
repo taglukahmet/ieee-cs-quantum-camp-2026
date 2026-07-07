@@ -7,14 +7,17 @@
 - [ ] `[1h]` `[THEORY]` 3Blue1Brown: Vectors & Linear Combinations `(#N1-01)`
 - [ ] `[1h]` `[THEORY]` 3Blue1Brown: Matrix Multiplication & Eigenvectors `(#N1-02)`
 - [ ] `[2h]` `[DRILL]` Calculate Bra-Ket probabilities & Superposition matrices `(#N1-03)`
+
 **The Physics of Water: Mathematical Formulation**
 - [ ] `[2h]` `[THEORY]` Penalty Methods & Lagrange Multipliers for QUBO `(#N1-04)`
 - [ ] `[2h]` `[RESEARCH]` Multi-Period Indexing & Dynamic Stock-Balance `(#N1-05)`
 - [ ] `[2h]` `[DRILL]` Draft Multi-Period Reservoir Constraint Equation `(#N1-06)`
 - [ ] `[2h]` `[DRILL]` Draft Pump Transition Penalty Matrix `(#N1-07)`
+
 **Software Architecture & Pipeline Orchestration**
 - [ ] `[3h]` `[CODE]` Build Mathematical Markdown Payload for Constraint 1 `(#N1-08)`
 - [ ] `[3h]` `[CODE]` Architect Base Pipeline Data Classes `(#N1-09)`
+
 **Cross-Training & Review**
 - [ ] `[1h]` `[CROSS]` Review Node 4's CP-SAT Baseline Math Models `(#N1-10)`
 - [ ] `[1h]` `[CROSS]` Review Node 2's D-Wave Ocean BQM Architecture `(#N1-11)`
@@ -24,11 +27,13 @@
 - [ ] `[1h]` `[THEORY]` D-Wave Physics: The Quantum Annealing Landscape `(#N2-01)`
 - [ ] `[2h]` `[THEORY]` Formulating QUBOS for Optimization `(#N2-02)`
 - [ ] `[2h]` `[RESEARCH]` Mixed-Integer to QUBO Mapping & Integer Bounds `(#N2-03)`
+
 **SDK Mastery & Execution (Ocean)**
 - [ ] `[2h]` `[DRILL]` Map Mathematical Formulation into `dimod` Objects `(#N2-04)`
 - [ ] `[3h]` `[CODE]` Build `ConstrainedQuadraticModel` (CQM) Logic `(#N2-05)`
 - [ ] `[2h]` `[CODE]` Cloud Deployment API via `LeapHybridCQMSolver` `(#N2-06)`
 - [ ] `[3h]` `[CODE]` Parse `SampleSet` for Constraint Violations `(#N2-07)`
+
 **Cross-Training & Review**
 - [ ] `[2h]` `[CROSS]` Integrate Node 4's Tabu Search "Repair" Script `(#N2-08)`
 - [ ] `[1h]` `[CROSS]` Review Node 1's Mathematical Constraint Equations `(#N2-09)`
@@ -38,11 +43,13 @@
 - [ ] `[2h]` `[THEORY]` IBM Quantum Learning: Basics of Quantum Information `(#N3-01)`
 - [ ] `[2h]` `[CODE]` Programmatic Circuit Construction & Gate Application `(#N3-02)`
 - [ ] `[2h]` `[CODE]` Execution via `AerSimulator` & Noise Injection `(#N3-03)`
+
 **Advanced Optimization (VQE & QAOA)**
 - [ ] `[3h]` `[THEORY]` Qiskit Optimization: VQE & QAOA Mechanics `(#N3-04)`
 - [ ] `[2h]` `[RESEARCH]` XY-Mixers & Constraint-Preserving Circuitry `(#N3-05)`
 - [ ] `[2h]` `[CODE]` Formulate Penalty-Loaded `QuadraticProgram` `(#N3-06)`
 - [ ] `[3h]` `[CODE]` Build QAOA Ansatz (Cost & Mixer Layers) `(#N3-07)`
+
 **Cross-Training & Review**
 - [ ] `[1h]` `[CROSS]` Review Node 1's QUBO / Penalty Formulations `(#N3-08)`
 - [ ] `[2h]` `[CROSS]` Benchmark QAOA vs. Node 4's Classical Baseline `(#N3-09)`
@@ -52,10 +59,12 @@
 - [ ] `[2h]` `[THEORY]` Mixed-Integer Linear Programming (MILP) Logic `(#N4-01)`
 - [ ] `[3h]` `[RESEARCH]` Google OR-Tools CP-SAT Solver Mechanics `(#N4-02)`
 - [ ] `[2h]` `[THEORY]` Local Search Heuristics & Tabu Search Theory `(#N4-03)`
+
 **Data Pipeline & Algorithmic Execution**
 - [ ] `[2h]` `[CODE]` Standardize JSON/CSV Data Ingestion Classes `(#N4-04)`
 - [ ] `[4h]` `[CODE]` Build CP-SAT MILP Baseline (Pump Wear-and-Tear) `(#N4-05)`
 - [ ] `[4h]` `[CODE]` Build Tabu Search "Repair" Framework `(#N4-06)`
+
 **Cross-Training & Review**
 - [ ] `[1h]` `[CROSS]` Collaborate with Node 2 on Quantum Output Filtering `(#N4-07)`
 - [ ] `[1h]` `[CROSS]` Review Node 5's NetworkX Topological Baselines `(#N4-08)`
@@ -66,10 +75,12 @@
 - [ ] `[2h]` `[THEORY]` Graph Partitioning Algorithms (METIS Concepts) `(#N5-02)`
 - [ ] `[3h]` `[RESEARCH]` Boundary Integrity & Overlapping Buffer Zones `(#N5-03)`
 - [ ] `[2h]` `[THEORY]` Multi-Objective Pareto Optimization Logic `(#N5-04)`
+
 **Topological Mapping & Evaluation Execution**
 - [ ] `[3h]` `[CODE]` Build Multi-Period Topological Maps (NetworkX) `(#N5-05)`
 - [ ] `[4h]` `[CODE]` Build Overlapping Sub-Graph Partitioner `(#N5-06)`
 - [ ] `[3h]` `[CODE]` Build Pareto Evaluation Engine (Energy vs. Demand) `(#N5-07)`
+
 **Cross-Training & Review**
 - [ ] `[1h]` `[CROSS]` Review Node 1's Base Pipeline Data Classes `(#N5-08)`
 - [ ] `[1h]` `[CROSS]` Review Node 4's JSON Data Ingestion Structures `(#N5-09)`

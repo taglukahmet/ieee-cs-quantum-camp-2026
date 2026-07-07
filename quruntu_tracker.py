@@ -10,6 +10,7 @@ from rich.text import Text
 from rich import box
 from dotenv import load_dotenv
 from config import Config
+from rich.markdown import Markdown
 
 # Graceful degradation if PyGithub is missing
 try:
@@ -227,6 +228,76 @@ def run_diagnostics():
         console.print("[bold red]ENVIRONMENT FAULT DETECTED. Check your virtual environment and requirements.txt.[/]")
         sys.exit(1)
 
+def render_current_mission(task_string):
+    """Parses a task tag and renders the highly detailed mission from the missions directory."""
+    console = Console()
+
+    # 1. Regex to extract the tag format: e.g., (#N1-01)
+    match = re.search(r'\(#(N[1-5])-(\d+)\)', task_string)
+    if not match:
+        console.print("[red]Error: No valid mission tag found on the current task.[/]")
+        return
+
+    node_id = match.group(1)
+    node_num = node_id[1]
+    full_tag = match.group(0)
+
+    # 2. Dynamic File Routing
+    mission_file = Path(f"missions/node_{node_num}_missions.md")
+    if not mission_file.exists():
+        console.print(f"[red]Error: Mission file {mission_file} not found.[/]")
+        return
+
+    # 3. Block Extraction
+    with open(mission_file, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    try:
+        # Split the document at the specific tag header
+        block_start = content.split(f"### {full_tag}")[1]
+        mission_raw = block_start.split("### (#")[0].strip()
+
+        # 4. Format the Markdown (Fixing the margin collapse)
+        # We inject double newlines to force Rich to recognize them as distinct blocks
+        mission_raw = mission_raw.replace("**Description:**", "\n\n**Description:**\n")
+        mission_raw = mission_raw.replace("**Sources:**", "\n\n**Sources:**\n")
+        mission_raw = mission_raw.replace("**Acceptance Criteria:**", "\n\n**Acceptance Criteria:**\n")
+
+        # Isolate the title from the rest of the body
+        lines = mission_raw.strip().split('\n')
+        title = lines[0].strip()
+        body = '\n'.join(lines[1:]).strip()
+
+        # Reconstruct a clean markdown string
+        final_markdown = f"## {title}\n{body}"
+
+        # 5. Terminal Rendering (Added padding for better UI margins)
+        header = f"[bold cyan]ACTIVE MISSION: {full_tag}[/]"
+        console.print(Panel(Markdown(final_markdown), title=header, border_style="cyan", padding=(1, 2)))
+
+    except IndexError:
+        console.print(f"[red]Error: Tag {full_tag} not found in {mission_file}[/]")
+
+def get_active_mission_string(filepath, target):
+    """Isolates the target's markdown block and returns the first unchecked task string."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+
+    in_target_block = False
+    for line in lines:
+        # Detect the start of the target's specific block
+        if line.startswith("### Node ") and target.lower() in line.lower():
+            in_target_block = True
+            continue
+        # Detect if we have bled into the next team member's block
+        elif in_target_block and line.startswith("### Node "):
+            break
+
+        # Return the first uncompleted task
+        if in_target_block and "- [ ]" in line:
+            return line.strip()
+
+    return None
 
 
 if __name__ == "__main__":
@@ -235,6 +306,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Quruntu Command Center")
     parser.add_argument("target", nargs="?", default="Quruntu", help="Team name or specific member name")
     parser.add_argument("--diagnose", action="store_true", help="Run local environment smoke tests")
+    parser.add_argument("--current", action="store_true", help="Find the current task decription based on the name")
     args = parser.parse_args()
 
     # Route 1: Run Diagnostics and Exit
@@ -247,9 +319,21 @@ if __name__ == "__main__":
         print(f"Error: Could not find {file_path}")
         sys.exit(1)
 
+    # Route 2: Render Current Mission Details and Exit
+    if args.current:
+        # Require a specific engineer to be targeted, not the whole team
+        if args.target.lower() in ["quruntu", "kararsizlik", "kararsızlıq"]:
+            print("Error: You must specify an individual engineer (e.g., 'Ahmet') to use the --current flag.")
+            sys.exit(1)
+
+        active_task_string = get_active_mission_string(file_path, args.target)
+        if active_task_string:
+            render_current_mission(active_task_string)
+        else:
+            print(f"No active missions found for {args.target}.")
+        sys.exit(0)
+
+    # Route 3: Standard Tracker Dashboard
     parsed_data = parse_curriculum(file_path, target=args.target)
-
-    # Attempt to fetch live data
     telemetry_data, error = fetch_live_telemetry()
-
     render_dashboard(parsed_data, args.target, telemetry_data, error)

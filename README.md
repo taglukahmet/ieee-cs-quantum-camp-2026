@@ -21,6 +21,7 @@ We are standardizing on Python 3.11.x. Do not use Python 3.12 or 3.13, as they l
 Navigate to the root of the cloned repository:
 ```bash
 python3.11 -m venv .venv
+py -3.11 -m venv venv #if windows
 ```
 
 Activate it:

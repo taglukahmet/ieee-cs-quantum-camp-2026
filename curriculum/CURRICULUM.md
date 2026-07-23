@@ -92,7 +92,7 @@
 **Note:** We prepared like this, you can change it according to your division of labour
 
 
-## Node 1: Formulation Architect (Name)
+### Node 1: Formulation Architect (Gozde Paklacı)
 **Theory & Mathematics**
 - [ ] `[1h]` Complete: 3Blue1Brown - Vectors & Linear Combinations
 - [ ] `[1h]` Complete: 3Blue1Brown - Matrix Multiplication & Eigenvectors
@@ -105,7 +105,7 @@
 - [ ] `[4h]` Code PR: Submit Mathematical markdown `[challenges/02_qubo/penalty_model.md]`
 - [ ] `[2h]` Report Draft: Write the "Mathematical Optimization Strategy" section (Max 2 pages).
 
-### Node 2: Annealing & Repair Engineer (Name)
+### Node 2: Annealing & Repair Engineer (Mustafa Barın Bakır)
 **Theory & Hardware**
 - [ ] `[1h]` Read: D-Wave Docs - "What is Quantum Annealing?"
 - [ ] `[2h]` Watch: D-Wave Webinar - "Formulating QUBOs for Optimization"
@@ -120,7 +120,7 @@
 - [ ] `[4h]` Code PR: Submit Ocean CQM script `[challenges/03_ocean/sampler.py]`
 - [ ] `[2h]` Report Draft: Write the "Hybrid Annealing Hardware Execution" section (Max 2 pages).
 
-### Node 3: Gate-Based Architect (Name)
+### Node 3: Gate-Based Architect (Beyza Kulaklı)
 **Theory & Hardware**
 - [ ] `[2h]` Complete: IBM Quantum Learning - "Basics of Quantum Information"
 - [ ] `[1h]` Master: Qubit state mapping on the Bloch Sphere
@@ -136,7 +136,7 @@
 - [ ] `[4h]` Code PR: Submit Qiskit benchmark script `[challenges/04_qaoa/circuit.ipynb]`
 - [ ] `[2h]` Report Draft: Write the "Gate-Based Combinatorial Comparison" section (Max 2 pages).
 
-### Node 4: Classical Data Engineer (Name)
+### Node 4: Classical Data Engineer (Yavuz Selim Arı)
 **Theory & Mathematics**
 - [ ] `[2h]` Master: Linear Programming (LP) boundaries & equality constraints
 - [ ] `[3h]` Master: Mixed-Integer Linear Programming (MILP) logic for binary hardware
@@ -150,7 +150,7 @@
 - [ ] `[4h]` Code PR: Submit classical baseline script `[challenges/01_baseline/linprog.py]`
 - [ ] `[2h]` Report Draft: Write the "Dataset Pre-Processing & Classical Baselines" section (Max 2 pages).
 
-### Node 5: Systems Integrator (Name)
+### Node 5: Systems Integrator (Aral Yılmaz)
 **Theory & Algorithms**
 - [ ] `[2h]` Read: NetworkX Documentation (Graph theory mapping)
 - [ ] `[3h]` Study: Graph Partitioning algorithms (METIS concepts)
